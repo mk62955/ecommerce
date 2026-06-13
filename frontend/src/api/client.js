@@ -1,10 +1,10 @@
 const ACCOUNTS_BASE_URL =
   import.meta.env.VITE_ACCOUNTS_BASE_URL ||
   import.meta.env.VITE_API_BASE_URL ||
-  "http://127.0.0.1:8000/accounts";
+  "https://manitech.cloud/accounts";
 
 const PRODUCTS_BASE_URL =
-  import.meta.env.VITE_PRODUCTS_BASE_URL || "http://127.0.0.1:8000/api/products";
+  import.meta.env.VITE_PRODUCTS_BASE_URL || "https://manitech.cloud/api/products";
 
 const getErrorMessage = (data) => {
   if (!data) return "Something went wrong. Please try again.";
@@ -38,7 +38,7 @@ const makeRequest = async (url, options = {}) => {
     });
   } catch {
     throw new Error(
-      "Backend is not reachable. Please start Django on http://127.0.0.1:8000."
+      "Backend is not reachable. Please check your network connection."
     );
   }
 

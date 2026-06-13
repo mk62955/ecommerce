@@ -23,7 +23,7 @@ const AdminUsers = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/admin/users/?search=${search}`,
+        `https://manitech.cloud/api/products/admin/users/?search=${search}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -56,7 +56,7 @@ const AdminUsers = () => {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/admin/users/${id}/`,
+        `https://manitech.cloud/api/products/admin/users/${id}/`,
         {
           method: "DELETE",
           headers: {
@@ -121,8 +121,8 @@ const AdminUsers = () => {
     try {
       const method = editingUser ? "PUT" : "POST";
       const url = editingUser
-        ? `http://127.0.0.1:8000/api/products/admin/users/${editingUser.id}/`
-        : "http://127.0.0.1:8000/api/products/admin/users/";
+        ? `https://manitech.cloud/api/products/admin/users/${editingUser.id}/`
+        : "https://manitech.cloud/api/products/admin/users/";
 
       // Remove password if it's empty during an update
       const payload = { ...formData };

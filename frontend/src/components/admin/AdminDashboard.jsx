@@ -11,7 +11,7 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://127.0.0.1:8000/api/products/admin/stats/", {
+        const response = await fetch("https://manitech.cloud/api/products/admin/stats/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
           },

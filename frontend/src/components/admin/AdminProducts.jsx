@@ -27,7 +27,7 @@ const AdminProducts = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/admin/products/?search=${search}`,
+        `https://manitech.cloud/api/products/admin/products/?search=${search}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -47,7 +47,7 @@ const AdminProducts = () => {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/products/admin/categories/",
+        "https://manitech.cloud/api/products/admin/categories/",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -86,7 +86,7 @@ const AdminProducts = () => {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/admin/products/${slug}/`,
+        `https://manitech.cloud/api/products/admin/products/${slug}/`,
         {
           method: "DELETE",
           headers: {
@@ -185,8 +185,8 @@ const AdminProducts = () => {
 
       const method = editingProduct ? "PUT" : "POST";
       const url = editingProduct
-        ? `http://127.0.0.1:8000/api/products/admin/products/${editingProduct.slug}/`
-        : "http://127.0.0.1:8000/api/products/admin/products/";
+        ? `https://manitech.cloud/api/products/admin/products/${editingProduct.slug}/`
+        : "https://manitech.cloud/api/products/admin/products/";
 
       const response = await fetch(url, {
         method,

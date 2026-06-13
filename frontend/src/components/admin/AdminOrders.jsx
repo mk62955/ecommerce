@@ -12,7 +12,7 @@ const AdminOrders = () => {
     const fetchOrders = async () => {
       try {
         setLoading(true);
-        let url = "http://127.0.0.1:8000/api/products/admin/orders/";
+        let url = "https://manitech.cloud/api/products/admin/orders/";
         if (statusFilter) {
           url += `?status=${statusFilter}`;
         }
@@ -38,7 +38,7 @@ const AdminOrders = () => {
   const handleStatusUpdate = async (orderNumber, newStatus) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/admin/orders/${orderNumber}/update_status/`,
+        `https://manitech.cloud/api/products/admin/orders/${orderNumber}/update_status/`,
         {
           method: "PATCH",
           headers: {
