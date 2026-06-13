@@ -19,7 +19,7 @@ const AdminCategories = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "http://127.0.0.1:8000/api/products/admin/categories/",
+        "https://manitech.cloud/api/products/admin/categories/",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -48,7 +48,7 @@ const AdminCategories = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/products/admin/categories/",
+        "https://manitech.cloud/api/products/admin/categories/",
         {
           method: "POST",
           headers: {
@@ -81,7 +81,7 @@ const AdminCategories = () => {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/admin/categories/${slug}/`,
+        `https://manitech.cloud/api/products/admin/categories/${slug}/`,
         {
           method: "DELETE",
           headers: {

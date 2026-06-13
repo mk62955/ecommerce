@@ -35,6 +35,9 @@ DEBUG = str(
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
+    "manitech.cloud",
+    "www.manitech.cloud",
+    "72.61.250.241"
 ]
 
 
@@ -213,6 +216,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://manitech.cloud",
+    "https://www.manitech.cloud",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
 

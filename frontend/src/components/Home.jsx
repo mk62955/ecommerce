@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/products/categories/");
+        const response = await fetch("https://manitech.cloud/api/products/categories/");
         if (response.ok) {
           const data = await response.json();
           setCategories(Array.isArray(data) ? data : data.results || []);
