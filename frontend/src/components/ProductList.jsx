@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../api/client";
 
 const PAGE_SIZE = 12;
 
@@ -24,7 +25,7 @@ const ProductList = ({ category, sortBy }) => {
         queryParams.append("page_size", PAGE_SIZE);
         if (sortBy) queryParams.append("ordering", sortBy);
 
-        const response = await fetch(`https://manitech.cloud/api/products/products/?${queryParams.toString()}`);
+        const response = await fetch(`${API_BASE_URL}/api/products/products/?${queryParams.toString()}`);
         if (!response.ok) throw new Error("Failed to fetch products");
         const data = await response.json();
         const nextProducts = Array.isArray(data) ? data : data.results || [];

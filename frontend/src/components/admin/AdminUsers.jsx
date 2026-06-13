@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../api/client";
 
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,7 @@ const AdminUsers = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://manitech.cloud/api/products/admin/users/?search=${search}`,
+        `${API_BASE_URL}/api/products/admin/users/?search=${search}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -56,7 +57,7 @@ const AdminUsers = () => {
 
     try {
       const response = await fetch(
-        `https://manitech.cloud/api/products/admin/users/${id}/`,
+        `${API_BASE_URL}/api/products/admin/users/${id}/`,
         {
           method: "DELETE",
           headers: {
@@ -121,8 +122,8 @@ const AdminUsers = () => {
     try {
       const method = editingUser ? "PUT" : "POST";
       const url = editingUser
-        ? `https://manitech.cloud/api/products/admin/users/${editingUser.id}/`
-        : "https://manitech.cloud/api/products/admin/users/";
+        ? `${API_BASE_URL}/api/products/admin/users/${editingUser.id}/`
+        : `${API_BASE_URL}/api/products/admin/users/`;
 
       // Remove password if it's empty during an update
       const payload = { ...formData };

@@ -281,7 +281,7 @@ sudo systemctl restart gunicorn.service
 sudo systemctl restart mysql
 # Test connection:
 mysql -u ecommerce_user -p ecommerce_db
-# Enter password: Mkm62955aA@#&
+# Enter password: Mkm62955aA@#& (ensure quotes are used in .env file)
 ```
 
 ### Static files not loading

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { productsApi } from "../../api/client";
+import { productsApi, API_BASE_URL } from "../../api/client";
 import { motion } from "framer-motion";
 
 const AdminDashboard = () => {
@@ -11,7 +11,7 @@ const AdminDashboard = () => {
     const fetchStats = async () => {
       try {
         setLoading(true);
-        const response = await fetch("https://manitech.cloud/api/products/admin/stats/", {
+        const response = await fetch(`${API_BASE_URL}/api/products/admin/stats/`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
           },

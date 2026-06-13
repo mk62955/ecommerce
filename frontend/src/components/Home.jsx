@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductList from "./ProductList";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../api/client";
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
@@ -10,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("https://manitech.cloud/api/products/categories/");
+        const response = await fetch(`${API_BASE_URL}/api/products/categories/`);
         if (response.ok) {
           const data = await response.json();
           setCategories(Array.isArray(data) ? data : data.results || []);

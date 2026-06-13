@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { API_BASE_URL } from "../../api/client";
 
 const AdminProducts = () => {
   const [products, setProducts] = useState([]);
@@ -27,7 +28,7 @@ const AdminProducts = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://manitech.cloud/api/products/admin/products/?search=${search}`,
+        `${API_BASE_URL}/api/products/admin/products/?search=${search}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -47,7 +48,7 @@ const AdminProducts = () => {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        "https://manitech.cloud/api/products/admin/categories/",
+        `${API_BASE_URL}/api/products/admin/categories/`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -86,7 +87,7 @@ const AdminProducts = () => {
 
     try {
       const response = await fetch(
-        `https://manitech.cloud/api/products/admin/products/${slug}/`,
+        `${API_BASE_URL}/api/products/admin/products/${slug}/`,
         {
           method: "DELETE",
           headers: {
@@ -185,8 +186,8 @@ const AdminProducts = () => {
 
       const method = editingProduct ? "PUT" : "POST";
       const url = editingProduct
-        ? `https://manitech.cloud/api/products/admin/products/${editingProduct.slug}/`
-        : "https://manitech.cloud/api/products/admin/products/";
+        ? `${API_BASE_URL}/api/products/admin/products/${editingProduct.slug}/`
+        : `${API_BASE_URL}/api/products/admin/products/`;
 
       const response = await fetch(url, {
         method,

@@ -91,17 +91,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'auth.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
@@ -148,6 +137,9 @@ SERVE_MEDIA_FILES = str(
     )
 ).lower() in ("1", "true", "yes", "on")
 
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 DATABASES = {
@@ -220,6 +212,13 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.manitech.cloud",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://manitech.cloud",
+    "https://www.manitech.cloud",
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 if DEBUG:
     FRONTEND_URL = "http://127.0.0.1:5173"

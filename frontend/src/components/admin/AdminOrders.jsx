@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../api/client";
 
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -12,7 +13,7 @@ const AdminOrders = () => {
     const fetchOrders = async () => {
       try {
         setLoading(true);
-        let url = "https://manitech.cloud/api/products/admin/orders/";
+        let url = `${API_BASE_URL}/api/products/admin/orders/`;
         if (statusFilter) {
           url += `?status=${statusFilter}`;
         }
@@ -38,7 +39,7 @@ const AdminOrders = () => {
   const handleStatusUpdate = async (orderNumber, newStatus) => {
     try {
       const response = await fetch(
-        `https://manitech.cloud/api/products/admin/orders/${orderNumber}/update_status/`,
+        `${API_BASE_URL}/api/products/admin/orders/${orderNumber}/update_status/`,
         {
           method: "PATCH",
           headers: {

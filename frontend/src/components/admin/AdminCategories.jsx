@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_BASE_URL } from "../../api/client";
 
 const AdminCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -19,7 +20,7 @@ const AdminCategories = () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://manitech.cloud/api/products/admin/categories/",
+        `${API_BASE_URL}/api/products/admin/categories/`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -48,7 +49,7 @@ const AdminCategories = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://manitech.cloud/api/products/admin/categories/",
+        `${API_BASE_URL}/api/products/admin/categories/`,
         {
           method: "POST",
           headers: {
@@ -81,7 +82,7 @@ const AdminCategories = () => {
 
     try {
       const response = await fetch(
-        `https://manitech.cloud/api/products/admin/categories/${slug}/`,
+        `${API_BASE_URL}/api/products/admin/categories/${slug}/`,
         {
           method: "DELETE",
           headers: {

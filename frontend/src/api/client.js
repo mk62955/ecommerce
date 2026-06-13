@@ -1,10 +1,9 @@
-const ACCOUNTS_BASE_URL =
-  import.meta.env.VITE_ACCOUNTS_BASE_URL ||
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://manitech.cloud/accounts";
+const isProd = import.meta.env.PROD;
 
-const PRODUCTS_BASE_URL =
-  import.meta.env.VITE_PRODUCTS_BASE_URL || "https://manitech.cloud/api/products";
+export const API_BASE_URL = isProd ? "" : "http://127.0.0.1:8000";
+
+const ACCOUNTS_BASE_URL = `${API_BASE_URL}/accounts`;
+const PRODUCTS_BASE_URL = `${API_BASE_URL}/api/products`;
 
 const getErrorMessage = (data) => {
   if (!data) return "Something went wrong. Please try again.";

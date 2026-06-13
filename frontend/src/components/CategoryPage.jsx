@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductList from "./ProductList";
+import { API_BASE_URL } from "../api/client";
 
 const CategoryPage = ({ category }) => {
   const categorySlug = category === "home-products" ? "home" : category;
@@ -13,7 +14,7 @@ const CategoryPage = ({ category }) => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch("https://manitech.cloud/api/products/categories/");
+        const response = await fetch(`${API_BASE_URL}/api/products/categories/`);
         if (!response.ok) {
           throw new Error(`Failed to fetch categories: ${response.statusText}`);
         }

@@ -18,7 +18,7 @@ apt install -y python3 python3-pip python3-venv git curl wget nginx mysql-server
 
 # Install Node.js
 echo "[3/10] Installing Node.js..."
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 apt install -y nodejs
 
 # Setup MySQL Database
@@ -55,7 +55,7 @@ SECRET_KEY=your-django-secret-key-here
 DEBUG=False
 DB_NAME=ecommerce_db
 DB_USER=ecommerce_user
-DB_PASSWORD=Mkm62955aA@#&
+DB_PASSWORD="Mkm62955aA@#&"
 DB_HOST=localhost
 DB_PORT=3306
 EMAIL_HOST_USER=dannyparker120@gmail.com
