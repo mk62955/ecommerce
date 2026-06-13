@@ -24,7 +24,7 @@ apt install -y python3 python3-pip python3-venv git curl wget nginx mysql-server
 
 ### Install Node.js (for frontend)
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 apt install -y nodejs
 ```
 

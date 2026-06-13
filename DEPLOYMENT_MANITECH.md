@@ -75,7 +75,7 @@ ssh root@your_vps_ip
 ```bash
 apt update && apt upgrade -y
 apt install -y python3 python3-pip python3-venv git curl nginx mysql-server
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 apt install -y nodejs
 ```
 
