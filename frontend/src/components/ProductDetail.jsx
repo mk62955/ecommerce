@@ -120,9 +120,9 @@ const ProductDetail = () => {
   return (
     <main className="min-h-screen bg-slate-50/50 px-4 py-12 sm:px-6 lg:px-8">
       <section className="mx-auto max-w-6xl">
-        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:h-[calc(100vh-7rem)] lg:overflow-hidden">
           {/* Product Image */}
-          <div className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:shadow-blue-100/50 sm:p-12 lg:p-20">
+          <div className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:shadow-blue-100/50 sm:p-12 lg:h-full lg:w-full lg:aspect-auto lg:p-20">
             {getImageUrl(product) ? (
               <img
                 src={getImageUrl(product)}
@@ -135,7 +135,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Product Details */}
-          <div className="flex flex-col pt-4 lg:pt-10">
+          <div className="flex flex-col pt-4 lg:h-full lg:overflow-y-auto lg:pt-10 lg:pr-2">
             <p className="mb-3 text-xs font-bold uppercase tracking-widest text-blue-600">
               {product.category.name}
             </p>
