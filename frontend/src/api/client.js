@@ -1,6 +1,7 @@
 const isProd = import.meta.env.PROD;
+const configuredApiBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
 
-export const API_BASE_URL = isProd ? "" : "http://127.0.0.1:8000";
+export const API_BASE_URL = configuredApiBaseUrl || (isProd ? "" : "http://127.0.0.1:8000");
 
 const ACCOUNTS_BASE_URL = `${API_BASE_URL}/accounts`;
 const PRODUCTS_BASE_URL = `${API_BASE_URL}/api/products`;
