@@ -300,22 +300,15 @@ sudo systemctl restart gunicorn.service
 ## 📞 Support Information
 
 **Your Setup Details:**
-- Domain: manitech.cloud
-- VPS IP: 72.61.250.241
+- Domain: Your Domain
+- VPS IP: Your IP
 - GitHub Repo: https://github.com/mk62955/ecommerce.git
-- Admin Email: dannyparker120@gmail.com
+- Admin Email: Your Email
 - Database: ecommerce_db
 - DB User: ecommerce_user
 
 ---
 
 ## ✨ Deployment Complete!
-
-Once everything is working:
-1. Your React app is live at https://manitech.cloud
-2. Your API is available at https://manitech.cloud/api/
-3. Your admin panel is at https://manitech.cloud/admin/
-4. Email verification is working
-5. SSL certificate auto-renews
 
 Congratulations! 🎉
